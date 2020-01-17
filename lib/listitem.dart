@@ -21,24 +21,29 @@ class _ListItem3dState extends State<ListItem3d> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              Text(
-                widget.songName,
-                style: TextStyle(
-                    fontSize: 18,
+          Flexible(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Text(
+                  widget.songName,
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(
+                    fontSize: 16,
                     fontWeight: FontWeight.w500,
-                    color: Color(0xff7888A0)),
-              ),
-              Text(
-                widget.singers,
-                style: TextStyle(
-                  fontSize: 15,
-                  color: Color(0xffa2a4a8),
+                    color: Color(0xff7888A0),
+                  ),
                 ),
-              ),
-            ],
+                Text(
+                  widget.singers,
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(
+                    fontSize: 13,
+                    color: Color(0xffa2a4a8),
+                  ),
+                ),
+              ],
+            ),
           ),
           Button3d(
             icon: widget.active ? Icons.pause : Icons.play_arrow,
@@ -52,10 +57,6 @@ class _ListItem3dState extends State<ListItem3d> {
 
         borderRadius: BorderRadius.all(Radius.circular(20.0)),
         color: widget.active ? Color(0xffd1dcf0) : null,
-        // gradient: LinearGradient(
-        //   begin: Alignment(0, 0.5),
-        //   colors: [const Color(0xffCDDAF0), const Color(0xffD6E3F8)],
-        // ),
       ),
     );
   }

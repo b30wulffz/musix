@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:musix/button.dart';
 import 'package:musix/utils/theme.dart';
 import 'package:musix/listitem.dart';
+import 'package:flute_music_player/flute_music_player.dart';
+import 'package:musix/music.dart';
 
 class playerList extends StatefulWidget {
   @override
@@ -11,6 +13,8 @@ class playerList extends StatefulWidget {
 class _playerListState extends State<playerList> {
   @override
   Widget build(BuildContext context) {
+    // MusicFinder audioPlayer = new MusicFinder();
+
     return ListView(
       children: <Widget>[
         Container(
@@ -55,6 +59,7 @@ class _playerListState extends State<playerList> {
                 color: Colors.white,
               ),
               child: CircleAvatar(
+                backgroundColor: Colors.orangeAccent,
                 radius: 70,
                 backgroundImage:
                     ExactAssetImage('assets/images/defaultLogo.jpg'),
@@ -68,36 +73,33 @@ class _playerListState extends State<playerList> {
         SizedBox(
           height: 60,
         ),
-        ListItem3d(
-          active: false,
-          songName: "Never Be Like You",
-          singers: "Flume · Vic Mensa",
-        ),
-        ListItem3d(
-          active: false,
-          songName: "Never Be Like You",
-          singers: "Flume · Vic Mensa",
-        ),
-        ListItem3d(
-          active: true,
-          songName: "Never Be Like You",
-          singers: "Flume · Vic Mensa",
-        ),
-        ListItem3d(
-          active: false,
-          songName: "Never Be Like You",
-          singers: "Flume · Vic Mensa",
-        ),
-        ListItem3d(
-          active: false,
-          songName: "Never Be Like You",
-          singers: "Flume · Vic Mensa",
-        ),
-        ListItem3d(
-          active: false,
-          songName: "Never Be Like You",
-          singers: "Flume · Vic Mensa",
-        ),
+        SongsFinder(),
+        // InkWell(
+        //   onTap: () {
+        //     // var songs = MusicFinder.allSongs();
+        //     // print(songs);
+        //   },
+        //   child: ListItem3d(
+        //     active: false,
+        //     songName: "Never Be Like You",
+        //     singers: "Flume · Vic Mensa",
+        //   ),
+        // ),
+        // ListItem3d(
+        //   active: false,
+        //   songName: "Never Be Like You",
+        //   singers: "Flume · Vic Mensa",
+        // ),
+        // ListItem3d(
+        //   active: true,
+        //   songName: "Never Be Like You",
+        //   singers: "Flume · Vic Mensa",
+        // ),
+        // ListItem3d(
+        //   active: false,
+        //   songName: "Never Be Like You",
+        //   singers: "Flume · Vic Mensa",
+        // ),
       ],
     );
   }
